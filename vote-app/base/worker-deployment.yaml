@@ -19,7 +19,4 @@ spec:
       - image: seuf/example-votting-app-worker
         imagePullPolicy: Always
         name: worker
-        resources:
-          limits:
-            cpu: 500m
-            memory: 1Gi
+        
