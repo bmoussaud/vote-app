@@ -1,0 +1,29 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: vote
+bases:
+  - ../base
+
+configMapGenerator:
+  - name: apps-config
+    behavior: create
+    literals:
+      - DNS_NAME=demo
+
+vars:
+- name: DNS_NAME
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: apps-config
+  fieldref:
+    fieldpath: data.DNS_NAME
+
+patches:
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: vote.*
+    path: patch.deployment.yml
