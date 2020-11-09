@@ -4,4 +4,4 @@ kind: Deployment
 metadata:
   name: $(DEPLOYMENT)
 spec:
-  replicas: 2
+  replicas: 1
