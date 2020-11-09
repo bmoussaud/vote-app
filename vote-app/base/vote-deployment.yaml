@@ -22,6 +22,5 @@ spec:
         - containerPort: 80
           name: vote
         resources:
-          limits:
-            cpu: 500m
+          limits:            
             memory: 1Gi
