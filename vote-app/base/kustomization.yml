@@ -10,8 +10,6 @@ resources:
   - redis-service.yaml
   - result-deployment.yaml
   - result-service.yaml
-  - result-ingress.yml
   - vote-deployment.yaml
   - vote-service.yaml
-  - vote-ingress.yml
   - worker-deployment.yaml
